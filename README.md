@@ -18,7 +18,8 @@ It will then produce an array with the following.
 * status
 * time
 * avatar
-* screen_name
+* screen_name#
+* profile_url
 * real_name
 
 You can then call other functions of the class to create links if you wish like:
