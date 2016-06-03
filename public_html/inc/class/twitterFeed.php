@@ -22,7 +22,8 @@ class twitterFeed {
 			<li>time</li>
 			<li>avatar</li>
 			<li>screen_name</li>
-			<li>eal_name</li>
+			<li>profile_url</li>
+			<li>real_name</li>
 		</ul>
 		<p>
 			You can then call other functions of the class to create links if you wish like:</br>
@@ -55,6 +56,7 @@ class twitterFeed {
 		    		'time' => $tweet->created_at,
 		    		'avatar' => $tweet->user->profile_image_url,
 		    		'screen_name' => $tweet->user->screen_name,
+		    		'profile_url' => 'https://twitter.com/'.$tweet->user->screen_name,
 		    		'real_name' => $tweet->user->name,
 		    	); 
 		    }
@@ -67,6 +69,7 @@ class twitterFeed {
 	public function make_links($status)
 	{
 		$status = preg_replace('%(http://([a-z0-9_.+&!#~/,\-]+))%i','<a href="http://$2">$1</a>',$status);
+		$status = preg_replace('%(https://([a-z0-9_.+&!#~/,\-]+))%i','<a href="https://$2">$1</a>',$status);
 	  	$status = preg_replace('/@([a-z0-9_]+)/i','<a href="http://twitter.com/$1">@$1</a>',$status);
 	  	$status = preg_replace('/(^|\s)#(\w*[a-zA-Z_]+\w*)/', '\1<a href="http://twitter.com/hashtag/\2">#\2</a>', $status);
 
