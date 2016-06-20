@@ -25,7 +25,7 @@ It will then produce an array with the following.
 You can then call other functions of the class to create links if you wish like:
 
 * $tw->make_links($tweets['status']); - This will link all hashtags and @username's as well as any URLS the tweet might contain
-* $tw->make_links($tweets['time']); - This will give a more twitter like time result based on the actual timestamp of the tweet. (eg: 1 hour ago)
+* $tw->twitter_time($tweets['time']); - This will give a more twitter like time result based on the actual timestamp of the tweet. (eg: 1 hour ago)
 from here you can style and control the output as you likeThis README would normally document whatever steps are necessary to get your application up and running.
 
 ## Help ##
